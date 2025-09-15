@@ -34,19 +34,19 @@ order by 1,2 desc;
 
 
 select * from loan where l_store=1000 and l_code=100;
-select l_date "´ëÃâÀÏÀÚ",l_code ´ëÃâÁ¾¸ñÄÚµå,l_qty ´ëÃâ°Ç¼ö,l_total ´ëÃâÃÑ¾×,
-sum(l_total) over(order by l_total)´©Àû´ëÃâ±İ¾×
+select l_date "ëŒ€ì¶œì¼ì",l_code ëŒ€ì¶œì¢…ëª©ì½”ë“œ,l_qty ëŒ€ì¶œê±´ìˆ˜,l_total ëŒ€ì¶œì´ì•¡,
+sum(l_total) over(order by l_total)ëˆ„ì ëŒ€ì¶œê¸ˆì•¡
 from loan where l_store=1000;
 
 
 
 
-select l_code ´ëÃâÁ¾¸ñÄÚµå,l_store ´ëÃâÁöÁ¡,l_date ´ëÃâÀÏÀÚ,l_qty ´ëÃâ°Ç¼ö,l_total ´ëÃâ¾×,
-sum(l_total)over(partition by l_code, l_store order by l_date)´©Àû´ëÃâ±İ¾×
+select l_code ëŒ€ì¶œì¢…ëª©ì½”ë“œ,l_store ëŒ€ì¶œì§€ì ,l_date ëŒ€ì¶œì¼ì,l_qty ëŒ€ì¶œê±´ìˆ˜,l_total ëŒ€ì¶œì•¡,
+sum(l_total)over(partition by l_code, l_store order by l_date)ëˆ„ì ëŒ€ì¶œê¸ˆì•¡
 from loan;
 
 
 
-select l_date ´ëÃâÀÏÀÚ, l_code ´ëÃâ±¸ºĞÄÚ½º, l_qty ´ëÃâ°Ç¼ö, l_total ´ëÃâÃÑ¾×,
-sum(l_total)over(partition by l_code order by l_total)ÄÚµåº°´©Àû´ëÃâ±İ¾×
+select l_date ëŒ€ì¶œì¼ì, l_code ëŒ€ì¶œêµ¬ë¶„ì½”ìŠ¤, l_qty ëŒ€ì¶œê±´ìˆ˜, l_total ëŒ€ì¶œì´ì•¡,
+sum(l_total)over(partition by l_code order by l_total)ì½”ë“œë³„ëˆ„ì ëŒ€ì¶œê¸ˆì•¡
 from loan where l_store=1000;
